@@ -1,0 +1,66 @@
+<!--------------- Debut Section Container --------------->
+<div class="Container">
+  <!-- Debut Section Container Left -->
+  <div class="Container_left">
+    <div class="logo mt-4">
+      <img src="assets/logo.png" alt="" srcset="">
+    </div>
+    <h4 class="text-center mt-3 ">Welcome</h4>
+    <p class="text-center">Please <span id="Sign">Sign in to continue</span></p>
+    <!----------------- Debut Section Formulaire --------------->
+    <div class="Container_Formulaire">
+      <form *ngIf="changeform==true" (submit)="submitFunction($event)">
+        <div class="mb-3">
+          <label for="exampleInputEmail1" class="form-label">Email address</label>
+          <input type="email" name="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" [(ngModel)]="formData.email">
+        </div>
+        <div class="mb-3">
+          <label for="exampleInputPassword1" class="form-label">Password</label>
+          <input type="password" name="password" class="form-control" id="exampleInputPassword1"
+          [(ngModel)]="formData.pass">
+        </div>
+        <div class="mb-3 form-check">
+          <input type="checkbox" class="form-check-input" id="exampleCheck1">
+          <div class="d-flex justify-content-between">
+            <label class="form-check-label" for="exampleCheck1">Remember me</label>
+            <p class="forgot">Forgot Password ?</p>
+          </div>
+        </div>
+        <button type="submit" class="btn btn-primary w-100" id="login">Login</button>
+        <p class="text-center mt-4">Not a member? <span class="Register" (click)="showform()">Register here</span></p>
+      </form>
+      <!------------------- Fin Formulaire ---------------------->
+
+      <form *ngIf="changeform==false" (submit)="Registerfunction($event)">
+        <div class="mb-3">
+          <label for="exampleInputEmail1" class="form-label">Email address</label>
+          <input type="email" name="mail"  class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" [(ngModel)]="formDataregister.emailregister">
+        </div>
+        <div class="mb-3">
+          <label for="exampleInputPassword1" class="form-label">Password</label>
+          <input type="password" name="password" class="form-control" id="exampleInputPassword1" [(ngModel)]="formDataregister.passregister">
+        </div>
+        <div class="mb-3 form-check">
+          <input type="checkbox" class="form-check-input" id="exampleCheck1">
+          <div class="d-flex justify-content-between">
+            <label class="form-check-label" for="exampleCheck1">Remember me</label>
+            <p class="forgot">Forgot Password ?</p>
+          </div>
+        </div>
+        <button type="submit" class="btn btn-primary w-100" id="login">Register</button>
+        <p class="text-center mt-4">Not a member? <span class="Register" (click)="showform()">Login here</span></p>
+      </form>
+    </div>
+    <!------------------- Fin Section Formulaire ------------------>
+  </div>
+  <!-- Fin Section Container left -->
+  <!-- Debut Section Container Right -->
+  <div class="Container_Right">
+       <img src="https://img.freepik.com/free-vector/my-password-concept-illustration_114360-4294.jpg?w=740&t=st=1699029381~exp=1699029981~hmac=e9365dcc3fdc4c8b9c7a2fecb85f3651b79306f8e13e966b4e84d8e50847125f" alt="">
+  </div>
+  <!-- Fin Section Container Right -->
+</div>
+
+
+<!--------------- Fin Section Container --------------->
+

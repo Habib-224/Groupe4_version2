@@ -1,0 +1,150 @@
+<div class="Container">
+  <div class="Container_Header">
+    <div class="Menu">
+      <ul>
+        <li><i class="fa-solid fa-user"></i> &nbsp;{{userName}}</li>
+        <li>Home</li>
+        <li><a [routerLink]="['/corbeille',iduser]">Corbeille</a></li>
+        <li><a [routerLink]="['']">Deconnexion</a></li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<div class="Container">
+  <div class="Container_Card mt-5">
+    <div class="Card1">
+      <div class="cardbx1">
+        <i class='bx bxs-contact'></i>
+        <div>
+          <p class="text-center">Contact</p>
+          <h3 class="text-center">{{contactlength}}</h3>
+        </div>
+      </div>
+    </div>
+    <div class="Card1">
+      <div class="cardbx">
+        <i class='bx bx-trash'></i>
+        <div>
+          <p class="text-center">Corbeille</p>
+          <h3 class="text-center">0</h3>
+        </div>
+      </div>
+    </div>
+    <div class="Card1">
+      <div class="cardbx2">
+        <i class='bx bxs-contact'></i>
+        <div>
+          <p class="text-center">User</p>
+          <h3 class="text-center">{{iduser}}</h3>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="Search">
+    <div class="add">
+      <p>{{userName}}</p>
+    </div>
+
+    <div class="formulaire">
+      <form action="" class="form">
+        <input type="text" class="form-control" id="validationCustom01" placeholder="Search" required>
+        <button type="submit" class="btn" id="user">Search</button>
+      </form>
+    </div>
+  </div>
+  <div class="Container_table">
+    <table class="table">
+      <thead>
+        <tr>
+          <th scope="col">id</th>
+          <th scope="col">Nom</th>
+          <th scope="col">Prenom</th>
+          <th scope="col">Email</th>
+          <th scope="col">Numero</th>
+          <th scope="col" colspan="2">Action</th>
+        </tr>
+      </thead>
+      <tbody *ngFor="let contact  of usernumero; let i = index">
+        <ng-container *ngIf="i !== 0">
+          <tr *ngIf="contact.etat == 0">
+            <th scope="row"><img src="assets/people.png" alt="" id="libass"></th>
+            <td>{{contact.nom }}</td>
+            <td>{{contact.prenom }}</td>
+            <td>{{contact.email }}</td>
+            <td>{{contact.numero }}</td>
+            <td><button class="btn " id="modifier">Modifier</button>&nbsp;&nbsp;<button class="btn"
+                (click)="Archiverfunction(contact.id)" id="archiver">Desarchiver</button></td>
+          </tr>
+        </ng-container>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Contact</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <form action="" (submit)="Contactfunction($event)">
+          <div class="col-md-12">
+            <label for="validationCustom01" class="form-label">Nom:</label>
+            <input type="text" name="nom" class="form-control" id="validationCustom01" placeholder="Nom" required
+              [(ngModel)]="formDatacontact.nom">
+          </div>
+          <div class="col-md-12">
+            <label for="validationCustom01" class="form-label">Prenom:</label>
+            <input type="text" name="Prenom" class="form-control" id="validationCustom01" placeholder="Prenom" required
+              [(ngModel)]="formDatacontact.prenom">
+          </div>
+          <div class="col-md-12">
+            <label for="validationCustom01" class="form-label">Email:</label>
+            <input type="email" name="email" class="form-control" id="validationCustom01" placeholder="email" required
+              [(ngModel)]="formDatacontact.email">
+          </div>
+          <div class="col-md-12">
+            <label for="validationCustom01" class="form-label">Numero:</label>
+            <input type="text" name="numero" class="form-control" id="validationCustom01" placeholder="Numero" required
+              [(ngModel)]="formDatacontact.numero">
+          </div>
+          <div class="input-group mt-3 mb-2">
+            <label class="input-group-text" for="inputGroupFile01">Upload</label>
+            <input type="file" name="photo" class="form-control" id="inputGroupFile01"
+              [(ngModel)]="formDatacontact.file">
+          </div>
+          <button class="btn btn-primary">Submit</button>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary" >Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal1" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        ...
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>

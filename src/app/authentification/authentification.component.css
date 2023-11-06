@@ -1,0 +1,54 @@
+.Container{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 4em;
+  flex-wrap: wrap-reverse;
+  background-color: white;
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+  width: 60%;
+  margin: auto;
+  margin-top: 5em;
+}
+
+.Container_left{
+  min-height: 570px;
+  width: 450px;
+  padding: 1em;
+  border-right: 1px solid darkgray;
+}
+.Container_Right{
+  min-height: 570px;
+  width: 450px;
+}
+.Container_Right img{
+  width: 450px;
+  min-height: 570px;
+}
+
+.logo img{
+  width: 80px;
+  height: 80px;
+  display: block;
+  margin: auto;
+}
+
+.forgot{
+  cursor: pointer;
+  color: #D268CC;
+}
+
+.Register{
+  cursor: pointer;
+  color: #D268CC;
+}
+
+#login{
+  background-color: #D268CC;
+  outline: none;
+  border:none;
+}
+
+#Sign{
+  color: #D268CC;
+}

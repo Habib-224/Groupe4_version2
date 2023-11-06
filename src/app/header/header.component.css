@@ -1,0 +1,23 @@
+.Container_Header{
+  background-color: #D06CCB;
+  color: white;
+}
+
+.Menu ul {
+  display: flex;
+  justify-content: end;
+  align-items: center;
+  list-style: none;
+  padding: 1.3em;
+  gap: 20px;
+}
+
+.Menu ul li:first-child{
+  position: absolute;
+  left: 0;
+  margin-left: 20px;
+}
+
+.Menu ul li{
+  cursor: pointer;
+}

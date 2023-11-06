@@ -1,0 +1,184 @@
+.Container_Card {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 40px;
+}
+
+.Card{
+  width: 330px;
+  height: 150px;
+  background-color: white;
+  padding: 1em;
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+  /* border-radius: 20px; */
+  border-left: 5px solid #BDA1F5;
+}
+
+.Card1 {
+  width: 330px;
+  height: 150px;
+  background-color: white;
+  padding: 1em;
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+  /* border-radius: 20px; */
+  border-left: 5px solid #BDA1F5;
+  display: flex;
+}
+
+.Card1 i{
+  font-size: 30px;
+}
+
+
+
+.Card p{
+  font-size: 17px;
+}
+
+.Container_table{
+  width: 80%;
+  margin: auto;
+  margin-top: 1em;
+}
+
+.Search{
+  display: flex;
+  justify-content: space-between;
+  gap: 30px;
+  margin-top: 5em;
+  margin-right: 150px;
+}
+
+.form{
+  display: flex;
+  gap: 10px;
+}
+
+.add{
+  margin-left: 150px;
+}
+
+.username{
+  margin-right: 25px;
+}
+
+
+.Container_Header {
+  background-color: #BDA1F5;
+  color: white;
+}
+
+.Menu ul {
+  display: flex;
+  justify-content: end;
+  align-items: center;
+  list-style: none;
+  padding: 1.3em;
+  gap: 20px;
+}
+
+.Menu ul li:first-child {
+  position: absolute;
+  left: 0;
+  margin-left: 20px;
+}
+
+.Menu ul li {
+  cursor: pointer;
+}
+
+.Menu a{
+  color: white;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+#user{
+  background-color: #BDA1F5;
+  color: white;
+}
+
+.Deconnexion{
+  background-color: black;
+  color: white;
+  padding: 0.3em;
+}
+
+.Menu img{
+   width: 160px;
+   height: 60px;
+}
+
+.table{
+  background-color: white;
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+  /* padding: 1em; */
+}
+
+.table tr{
+  background-color: white;
+}
+
+#archiver{
+  background-color: #CF67CF;
+  color: white;
+}
+
+#modifier{
+  background-color: #BDA1F5;
+  color: white;
+}
+
+.cardbx{
+  display:flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.cardbx i{
+  font-size: 55px;
+  color: #BDA1F5;
+  background-color: aliceblue;
+  padding: 0.3em;
+  margin-right:0.5em;
+  border-radius: 10px;
+}
+
+#libass{
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+}
+
+.cardbx1 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* background-color: #FFE0D3;; */
+}
+
+.cardbx1 i {
+  font-size: 55px;
+  color: #BDA1F5;
+  background-color: #FFE0D3;
+  padding: 0.3em;
+  margin-right: 0.5em;
+  border-radius: 10px;
+}
+
+.cardbx2 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* background-color: #FFE0D3;; */
+}
+
+.cardbx2 i {
+  font-size: 55px;
+  color: #BDA1F5;
+  background-color: #d7d7d7;
+  padding: 0.3em;
+  margin-right: 0.5em;
+  border-radius: 10px;
+}
