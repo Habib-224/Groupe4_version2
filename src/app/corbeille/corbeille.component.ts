@@ -107,13 +107,10 @@ iduser: any;
   Archiverfunction(id: number) {
     // alert(id);
      this.datastring = localStorage.getItem('user');
-      let existingData = this.datastring ? JSON.parse(this.datastring) : [];
-
-      let user: any[] = existingData;
-
-      //@ts-ignore
-
-      let urlUserId = parseInt(this.route.snapshot.paramMap.get('id') || '');
+    let existingData = this.datastring ? JSON.parse(this.datastring) : [];
+    let user: any[] = existingData;
+    //@ts-ignore
+    let urlUserId = parseInt(this.route.snapshot.paramMap.get('id') || '');
 
     let userFound = user.find(existingData => existingData.id === urlUserId);
     console.log(userFound)
@@ -121,18 +118,31 @@ iduser: any;
       //@ts-ignore
       let usercomptefound = userFound.contact.find(contact => contact.id === id)
       if (usercomptefound) {
-        // console.log(usercomptefound.etat)
+        Swal.fire({
+        title: 'Confirmation',
+        text: 'Êtes-vous sûr de vouloir archiver ce contact?',
+        icon: 'warning',
+        showCancelButton: true,
+        confirmButtonText: 'Oui, archiver!',
+        cancelButtonText: 'Annuler'
+      }).then((result) => {
+      if (result.isConfirmed) {
+        // L'utilisateur a confirmé l'archivage, vous pouvez maintenant effectuer les opérations nécessaires
         usercomptefound.etat = '1';
         //  localStorage.setItem('user', JSON.stringify(usercomptefound));
         localStorage.setItem('user', JSON.stringify(existingData));
         Swal.fire({
           position: 'center',
           icon: 'success',
-          title: 'Contact Desarchivé avec success ',
+          title: 'Contact archivé avec succès ',
           showConfirmButton: false,
           timer: 1500
-        })
-        window.location.reload();
+        });
+        setTimeout(() => {
+          window.location.reload();
+        }, 1500); // Rechargez la page après 1,5 seconde (1500 millisecondes)
+      }
+      });
       } else {
         console.log("user not found")
       }
@@ -140,5 +150,4 @@ iduser: any;
       console.log('Utilisateur non trouvé'); // Affichez un message d'erreur si l'utilisateur n'est pas trouvé
     }
   }
-
 }

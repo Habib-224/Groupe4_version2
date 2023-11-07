@@ -110,18 +110,31 @@ export class AccueilComponent {
       //@ts-ignore
       let usercomptefound = userFound.contact.find(contact => contact.id === id)
       if (usercomptefound) {
-        // console.log(usercomptefound.etat)
+        Swal.fire({
+        title: 'Confirmation',
+        text: 'Êtes-vous sûr de vouloir archiver ce contact?',
+        icon: 'warning',
+        showCancelButton: true,
+        confirmButtonText: 'Oui, archiver!',
+        cancelButtonText: 'Annuler'
+      }).then((result) => {
+      if (result.isConfirmed) {
+        // L'utilisateur a confirmé l'archivage, vous pouvez maintenant effectuer les opérations nécessaires
         usercomptefound.etat = '0';
         //  localStorage.setItem('user', JSON.stringify(usercomptefound));
         localStorage.setItem('user', JSON.stringify(existingData));
-         Swal.fire({
-        position: 'center',
-        icon: 'success',
-        title: 'Contact archivé avec success ',
-        showConfirmButton: false,
-        timer: 1500
-         })
-        window.location.reload();
+        Swal.fire({
+          position: 'center',
+          icon: 'success',
+          title: 'Contact archivé avec succès ',
+          showConfirmButton: false,
+          timer: 1500
+        });
+        setTimeout(() => {
+          window.location.reload();
+        }, 1500); // Rechargez la page après 1,5 seconde (1500 millisecondes)
+      }
+      });
       } else {
         console.log("user not found")
       }
